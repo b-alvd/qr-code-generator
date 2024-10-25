@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px;
+    min-height: 100vh;
+    background: linear-gradient(110deg, #2c2c2c, #714085);
+}
+
+div.container {
+    height: 265px;
+    max-width: 410px;
+    padding: 20px 25px 0;
+    border-radius: 7px;
+    background: #fff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: height 0.2s ease;
+}
+div.container.active {
+    height: 530px;
+}
+
+div.container header h1 {
+    font-size: 21px;
+    font-weight: 500;
+}
+div.container header p {
+    margin-top: 5px;
+    font-size: 16px;
+    color: #575757;
+}
+
+div.container div.form {
+    margin: 20px 0 25px;
+}
+div.container div.form :where(input, button) {
+    width: 100%;
+    height: 55px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    transition: 0.1s ease;
+}
+div.container div.form input {
+    padding: 0 17px;
+    font-size: 18px;
+    border: 1px solid #999;
+}
+div.container div.form input:focus {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.13);
+}
+div.container div.form input::placeholder {
+    color: #999;
+}
+div.container div.form button {
+    margin-top: 20px;
+    font-size: 17px;
+    cursor: pointer;
+    color: #fff;
+    background: #714085;
+    transition: 0.5s ease;
+}
+div.container div.form button:hover {
+    background: #9c77aa
+}
+
+div.container div.qr-code {
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 33px 0;
+    border-radius: 5px;
+    pointer-events: none;
+    border: 1px solid #ccc;
+}
+div.container div.qr-code img {
+    width: 170px;
+}
+div.container.active .qr-code {
+    opacity: 1;
+    pointer-events: auto;
+    transition: opacity 0.5s 0.5s ease;
+}
+
+@media (max-width: 430px) {
+    div.container {
+        height: 255px;
+        padding: 16px 20px;
+    }
+    div.container.active {
+        height: 510px;
+    }
+
+    div.container header p {
+        color: #696969;
+    }
+
+    div.container div.form:where(input, button) {
+        height: 52px;
+    }
+
+    div.container div.qr-code img {
+        width: 160px;
+    }
+}
